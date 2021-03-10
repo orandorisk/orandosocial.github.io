@@ -1,0 +1,233 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --hitam: hsl(300, 43%, 22%);
+    --pink: hsl(333, 80%, 67%);
+    --abumagenta: hsl(303, 10%, 53%);
+    --lightmagenta: hsl(300, 24%, 96%);
+    --putih: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Spartan',
+        sans-serif;
+    font-size: 15px;
+    background-color: var(--lightmagenta);
+    padding: 100px 120px 100px 120px;
+}
+
+.desktop,
+.mobile {
+    position: absolute;
+}
+
+.mobile {
+    display: none;
+}
+
+.desktop.top {
+    top: 0px;
+    left: 0px;
+}
+
+.desktop.bot {
+    bottom: 0px;
+    right: 0px;
+}
+
+.container {
+    max-width: 1440px;
+
+    display: grid;
+    grid-template-areas: "rowatas"
+        "rowbawah";
+}
+
+.container .rowatas {
+    grid-area: rowatas;
+    display: grid;
+    grid-template-areas: "text star";
+    grid-template-columns: repeat(2, 100fr);
+    margin-bottom: 2rem;
+}
+
+.container .rowbawah {
+    grid-area: rowbawah;
+    display: grid;
+    grid-template-areas: "testimoni1 testimoni2 testimoni3";
+}
+
+.rowatas .text {
+    grid-area: text;
+}
+
+.rowatas .star {
+    grid-area: star;
+}
+
+.star .feed {
+    display: flex;
+    background-color: hsl(300, 35%, 94%);
+    margin: 20px 0px;
+    padding: 15px 20px;
+    justify-content: space-around;
+    border-radius: 7px;
+    width: 87%;
+}
+
+.star .feed.sat {
+    margin-left: -10px;
+}
+
+.star .feed.du {
+    margin-left: 20px;
+}
+
+.star .feed.tig {
+    margin-left: 50px;
+}
+
+.bintang img {
+    cursor: pointer;
+}
+
+.feed p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.rowbawah .testimoni.sat {
+    grid-area: testimoni1;
+}
+
+.rowbawah .testimoni.du {
+    grid-area: testimoni2;
+}
+
+.rowbawah.testimoni.tig {
+    grid-area: testimoni3;
+}
+
+.testimoni.sat,
+.testimoni.du,
+.testimoni.tig {
+    background-color: var(--hitam);
+    padding: 24px 25px 30px 25px;
+    margin-right: 25px;
+    border-radius: 9px;
+    box-shadow: 0px 10px 20px rgba(238, 228, 238, 0.753);
+
+}
+
+.testimoni img {
+    border-radius: 50%;
+    width: 35px;
+    margin: 0px 14px 20px 0px;
+}
+
+.testimoni .profil {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.testimoni .profil p {
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.profil p.v {
+    color: rgb(241, 163, 175);
+    font-weight: 200;
+    font-size: 0.7rem;
+}
+
+.text h1 {
+    font-size: 3em;
+    color: var(--hitam);
+    font-family: 'Spartan',
+        sans-serif;
+    padding: 0px 180px 15px 0px;
+}
+
+.text p {
+    color: var(--abumagenta);
+    line-height: 1.7;
+}
+
+.testimoni p {
+    color: var(--lightmagenta);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+.attribution {
+    text-align: center;
+    bottom: 0px;
+    position: relative;
+    color: white;
+}
+
+.attribution a {
+    color: rgb(34, 126, 118);
+    text-decoration: none;
+}
+
+@media(min-width:700px) {
+    .rowbawah .testimoni.sat {
+        margin-top: 10px;
+        height: 200px;
+    }
+
+    .rowbawah .testimoni.du {
+        margin-top: 30px;
+        height: 200px;
+    }
+
+    .rowbawah .testimoni.tig {
+        margin-top: 50px;
+        height: 200px;
+    }
+}
+
+@media(max-width:900px) {
+    body {
+        padding: 20px;
+    }
+
+    .container .rowatas {
+        grid-template-areas: "text"
+            "star";
+    }
+
+    .container .rowbawah {
+        grid-template-areas: "testimoni1"
+            "testimoni2"
+            "testimoni3";
+        row-gap: 20px;
+    }
+
+    .mobile {
+        display: inherit;
+    }
+
+    .mobile.top {
+        top: 0px;
+        left: 0px;
+    }
+
+    .mobile.bot {
+        bottom: 0px;
+        right: 0px;
+        display: none;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+}
